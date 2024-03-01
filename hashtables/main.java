@@ -12,8 +12,7 @@ public class main {
         ht.set("tip",202);
         ht.set("screw",230);
 
-
-
+// temp 2 comment
         ht.printtable();
 
     }
