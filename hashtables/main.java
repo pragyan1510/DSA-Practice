@@ -10,8 +10,10 @@ public class main {
         ht.set("paint",450);
         ht.set("tiles",23);
 
-        System.out.println(ht.get("nails"));
-        System.out.println(ht.get("lumber"));
+//        System.out.println(ht.get("nails"));
+//        System.out.println(ht.get("lumber"));
+
+        System.out.println(ht.keys());
 
     }
 }
