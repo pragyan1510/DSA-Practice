@@ -18,4 +18,13 @@ public class graph {
         return false;
     }
 
+    public boolean addedge(String vertex1, String vertex2){
+        if(adjlist.get(vertex1)!=null && adjlist.get(vertex2)!=null){
+            adjlist.get(vertex1).add(vertex2);
+            adjlist.get(vertex2).add(vertex1);
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -6,9 +6,13 @@ public class main {
         mygraph.addvertex("A");
 
         mygraph.addvertex("B");
+
+        mygraph.addedge("A","B");
+
+
         mygraph.printgraph();
 
         //output
-        //{A=[], B=[]}
+        //{A=[B], B=[A]}
     }
 }
