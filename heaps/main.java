@@ -1,25 +1,29 @@
 package heaps;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 public class main {
+
     public static void main(String[] args) {
-        heaps myheap = new heaps();
-        myheap.insert(99);
-        myheap.insert(75);
-        myheap.insert(80);
-        myheap.insert(55);
-        myheap.insert(60);
-        myheap.insert(50);
-        myheap.insert(65);
-
-        System.out.println(myheap.getHeap());
-
-
-        myheap.remove();
-
-        System.out.println(myheap.getHeap());
-
-        myheap.remove();
-        System.out.println(myheap.getHeap());
+//        heaps myheap = new heaps();
+//        myheap.insert(99);
+//        myheap.insert(75);
+//        myheap.insert(80);
+//        myheap.insert(55);
+//        myheap.insert(60);
+//        myheap.insert(50);
+//        myheap.insert(65);
+//
+//        System.out.println(myheap.getHeap());
+//
+//
+//        myheap.remove();
+//
+//        System.out.println(myheap.getHeap());
+//
+//        myheap.remove();
+//        System.out.println(myheap.getHeap());
 
 
         /*
@@ -42,6 +46,7 @@ public class main {
         [100,99,68,56,72]
         [100,99,75,56,72,68]
          */
+
 
 
 
