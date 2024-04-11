@@ -79,4 +79,58 @@ public class BinarySearchTrees {
     }
 
 
+
+    private Node rinsert(Node currentNode,int value){
+        if(currentNode==null)return new Node(value);
+        if (value<currentNode.value){
+            currentNode.left = rinsert(currentNode.left,value);
+        } else if (value>currentNode.value) {
+            currentNode.right = rinsert(currentNode.right,value);
+        }
+        return currentNode;
+    }
+
+    public void rinsert(int value){
+        if(root==null)root = new Node(value);
+        rinsert(root,value);
+    }
+
+
+    private Node deletenode(Node currentNode,int value){
+        if(currentNode==null)return null;
+        if(value<currentNode.value){
+            currentNode.left = deletenode(currentNode.left,value);
+        } else if (value>currentNode.value) {
+            currentNode.right = deletenode(currentNode.right,value);
+        }
+        else {
+            if (currentNode.left==null && currentNode.right==null){
+                return null;
+            } else if (currentNode.left==null) {
+                currentNode = currentNode.right;
+
+            } else if (currentNode.right==null) {
+                currentNode = currentNode.left;
+            }
+            else {
+                int subtreemin = minValue(currentNode.right);
+                currentNode.value = subtreemin;
+                currentNode.right = deletenode(currentNode.right,subtreemin);
+            }
+        }
+        return currentNode;
+    }
+
+    public int minValue(Node currentNode){
+        while (currentNode.left != null){
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
+    }
+
+    public void deletenode(int value){
+        deletenode(root,value);
+    }
+
+
 }
