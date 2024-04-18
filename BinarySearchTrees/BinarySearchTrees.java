@@ -1,5 +1,9 @@
 package BinarySearchTrees;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BinarySearchTrees {
@@ -130,6 +134,45 @@ public class BinarySearchTrees {
 
     public void deletenode(int value){
         deletenode(root,value);
+    }
+
+
+    public ArrayList<Integer> BFS(){
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+        queue.add(currentNode);
+
+        while(queue.size()>0){
+            currentNode = queue.remove();
+            results.add(currentNode.value);
+
+            if(currentNode.left!=null){
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right!=null){
+                queue.add((currentNode.right));
+            }
+        }
+        return results;
+    }
+
+    public ArrayList<Integer> DFSpreorder(){
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse{
+            Traverse(Node currentNode){
+                results.add(currentNode.value);
+                if(currentNode.left!=null){
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right!=null){
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return results;
     }
 
 
