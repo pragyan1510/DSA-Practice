@@ -17,6 +17,12 @@ public class main {
         //depth first search code
         System.out.println(mybst.DFSpreorder());
 
+        //depth first search post order code here
+        System.out.println(mybst.DFSpostorder());
+
+        //deth first search inorder code
+        System.out.println(mybst.DFSinorder());
+
 
 //        System.out.println( mybst.contain(34) );
 //        System.out.println( mybst.contain(23) );

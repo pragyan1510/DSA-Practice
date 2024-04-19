@@ -175,5 +175,43 @@ public class BinarySearchTrees {
         return results;
     }
 
+    public ArrayList<Integer> DFSpostorder(){
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse{
+            Traverse(Node currentNode){
+                if(currentNode.left!=null){
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right!=null){
+                    new Traverse(currentNode.right);
+                }
+                results.add(currentNode.value);
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
+
+    public ArrayList<Integer> DFSinorder(){
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse{
+            Traverse(Node currentNode){
+                if(currentNode.left!=null){
+                    new Traverse(currentNode.left);
+                }
+                results.add(currentNode.value);
+                if (currentNode.right!=null){
+                    new Traverse(currentNode.right);
+                }
+
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
+
+
 
 }
